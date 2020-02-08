@@ -2,8 +2,6 @@
 
 This is one of the React projects of Udemy Course: Complete React Developer in 2020 with Redux, Hooks, GraphQL.
 
-I started this project on Jan, 2020 to understand React deeply. I commit to GitHub as changes are made on files.
-
 The images of monsters: https://robohash.org
 
 ## Note
