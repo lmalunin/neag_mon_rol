@@ -7,9 +7,13 @@ import './App.css';
 
 const App = () => {
 
+    console.log('rendered');
+
     const [searchField, setSearchField] = useState('');
     const [monsters, setMonsters] = useState([])
     const [filteredMonsters, setFilteredMonsters] = useState(monsters)
+
+    const [title, setTitle] = useState('');
 
     useEffect(() => {
             fetch("https://jsonplaceholder.typicode.com/users/")
@@ -30,12 +34,23 @@ const App = () => {
         setSearchField(e.target.value.toLowerCase());
     };
 
+    const onTitleChange = (e) => {
+        setTitle(e.target.value.toLowerCase());
+    };
+
     return (
         <div className='App'>
+            <h1> {title} </h1>
             <h1> Monsters Rolodex </h1>
+
             <SearchBox
                 placeholder='search monsters'
                 handleChange={onSearchChange}
+            />
+            <br/>
+            <SearchBox
+                placeholder='set title'
+                handleChange={onTitleChange}
             />
             <CardList monsters={filteredMonsters}/>
         </div>
